@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style_one.css" type="text/css">
+    </head>
+    <body>
+        <script type="text/javascript">
+            function przelicznik() {
+                
+                var pln = 1.00;
+                var eur = 4.49;
+                var usd = 3.67;
+                var gbp = 0.19;
+                var chf = 0.24;
+                var rate;
+                var radio1 = document.querySelector('input[name="flaga"]:checked').value;
+                var number1 = document.getElementById("number1").value;
+                var radio2 = document.querySelector('input[name="flaga2"]:checked').value;
+                var number2 = document.getElementById("number2").value;
+                console.log(radio1+" "+ number1);
+                if(radio2=="EUR")
+                {
+                    rate=eur;
+
+                }
+                else if(radio2=="USD")
+                {
+                    rate=usd;
+                }
+                else if(radio2=="GBP")
+                {
+                    rate=gbp;
+                }
+                else if(radio2=="CHF")
+                {
+                    rate=chf;
+                }
+                else if(radio2=="PLN")
+                {
+                    rate=1;
+                }
+                
+                if(radio1=="PLN")
+                {
+                   if(number2==""||number2==null)
+                    {
+                    document.getElementById("number2").value=Math.round(number1/rate*100)/100 
+                    }
+                }
+                else if(radio1=="EUR")
+                {
+                    if(number2==""||number2==null)
+                    {
+                        let zl = number1*eur;
+                        document.getElementById("number2").value=Math.round(zl/rate*100)/100 
+                    }
+                }
+                else if(radio1=="USD")
+                {
+                    if(number2==""||number2==null)
+                    {
+                        let zl = number1*usd;
+                        document.getElementById("number2").value=Math.round(zl/rate*100)/100 
+                    }
+                }
+                else if(radio1=="GBP")  
+                {
+                    if(number2==""||number2==null)
+                    {
+                        let zl = number1*gbp;
+                        document.getElementById("number2").value=Math.round(zl/rate*100)/100
+                    }
+                }
+                else if(radio1=="CHF")
+                {
+                    if(number2==""||number2==null)
+                    {
+                        let zl = number1*chf;
+                        document.getElementById("number2").value=Math.round(zl/rate*100)/100
+                    }
+                }
+            
+
+            }
+            
+                function ClearI()
+                {
+                    document.getElementById("number2").value = "";
+                }
+        </script>
+        
+        <div id="container">
+            <div id="menu">
+                
+                <form action="" id = form1 name="zamiana"> <br>
+                    
+                    <div class="input1">
+                    Wybierz walute: <br>
+                    
+                    <input type="radio" id="PLN" name="flaga" value="PLN">                                
+                    <label for="PLN"><img src="polandflag.jpg" class="img"></label><br>
+                    <input type="radio" id="EUR" name="flaga" value="EUR">
+                    <label for="EUR"><img src="europeflag.jpg" class="img"></label><br>
+                    <input type="radio" id="USD" name="flaga" value="USD">
+                    <label for="USD"><img src="usaflag.jpg" class="img"></label><br>
+                    <input type="radio" id="GBP" name="flaga" value="GBP">                                
+                    <label for="GBP"><img src="britishflag.jpg" class="img"></label><br>
+                    <input type="radio" id="CHF" name="flaga" value="CHF">
+                    <label for="CHF"><img src="switzerlandflag.jpg" class="img"></label><br>
+
+                    </div>
+                   
+                    <div class="input2">
+                    Wybierz kurs: <br> 
+                    
+                    <input type="radio" id="PLN" name="flaga2" value="PLN">
+                    <label for="PLN"><img src="polandflag.jpg" class="img"></label> <br>
+                    <input type="radio" id="EUR" name="flaga2" value="EUR">
+                    <label for="EUR"><img src="europeflag.jpg" class="img"></label> <br>
+                    <input type="radio" id="USD" name="flaga2" value="USD">
+                    <label for="USD"><img src="usaflag.jpg" class="img"></label><br>
+                    <input type="radio" id="GBP" name="flaga2" value="GBP">
+                    <label for="GBP"><img src="britishflag.jpg" class="img"></label><br>
+                    <input type="radio" id="CHF" name="flaga2" value="CHF">
+                    <label for="CHF"><img src="switzerlandflag.jpg" class="img"></label><br>
+
+                    </div>
+                </form>
+                <input type="number" id = number1 onkeypress="ClearI()" >
+
+                <input type="number" id = number2 placeholder="Przeliczona waluta" disabled><br>
+                    
+                <input type="button" value="Przelicz walute" onClick="przelicznik()" /> 
+                    
+                
+            </div>
+        </div>
+    </body>
+</html>
+                

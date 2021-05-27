@@ -1,0 +1,49 @@
+body
+{
+    font-family: 'Arial Narrow';
+    background-image: url(money.jpg);
+    background-attachment: fixed;
+}
+
+
+#container
+{
+    width: 100%;
+
+}
+
+
+#menu
+{
+    width: 600px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    border: 3px ridge rgb(132, 140, 146);
+    padding: 10px;
+    margin-left: 33%;
+    margin-top: 10%;
+    border-radius: 8px;
+    
+    font-size: x-large;
+    text-align: center
+}
+
+.input1
+{   
+    
+    margin-right: 50%  ;
+  
+}
+.input2
+{
+    margin-left: 50%;
+    margin-top: -218px;
+}
+
+.img
+{
+    border-radius:50%;
+    border: 1px solid black;
+    
+
+}
